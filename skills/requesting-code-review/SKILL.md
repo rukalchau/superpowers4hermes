@@ -1,6 +1,13 @@
 ---
 name: requesting-code-review
-description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+description: Request focused code review before merge or after major changes — dispatch reviewer with crafted context
+version: 1.0.0
+author: Adapted from obra/superpowers
+platforms: [macos, linux, windows]
+metadata:
+  hermes:
+    tags: [code-review, pre-merge, quality, diff-review]
+    requires_toolsets: [git, terminal]
 ---
 
 # Requesting Code Review
@@ -31,7 +38,7 @@ HEAD_SHA=$(git rev-parse HEAD)
 
 **2. Dispatch code reviewer subagent:**
 
-Use Task tool with `general-purpose` type, fill template at `code-reviewer.md`
+Delegate to a worker using the template at `references/code-reviewer.md`
 
 **Placeholders:**
 - `{DESCRIPTION}` - Brief summary of what you built
@@ -57,7 +64,7 @@ HEAD_SHA=$(git rev-parse HEAD)
 
 [Dispatch code reviewer subagent]
   DESCRIPTION: Added verifyIndex() and repairIndex() with 4 issue types
-  PLAN_OR_REQUIREMENTS: Task 2 from docs/superpowers/plans/deployment-plan.md
+  PLAN_OR_REQUIREMENTS: Task 2 from docs/plans/deployment-plan.md
   BASE_SHA: a7981ec
   HEAD_SHA: 3df7661
 
